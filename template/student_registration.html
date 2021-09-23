@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+
+
+    <title>Face Based Attendance System</title>
+  </head>
+  <body>
+
+
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'img/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign Up</h3>
+              <p class="mb-4">Fill out the student details for new registration.</p>
+            </div>
+              <form onsubmit="return validateForm()" action="std_registration_data" method="post" id="myForm" name="myForm">
+              {% csrf_token %}
+
+              <!--<div class="form-group first">
+                <input type="text" class="form-control" id="stdenroll" name="stdenroll" placeholder="Enrollment No" required>
+              </div>-->
+
+              <div class="form-group first">
+                <input type="text" class="form-control" id="stdfirstname" name="stdfirstname" placeholder="First Name" required>
+              </div>
+
+              <div class="form-group first">
+                <input type="text" class="form-control" id="stdlastname" name="stdlastname" placeholder="Last Name" required>
+              </div>
+
+              <div class="form-group first">
+                <input type="text" class="form-control" id="stdsurname" name="stdsurname" placeholder="Surname" required>
+              </div>
+
+
+              <div class="form-group first">
+                <input type="text" class="form-control" id="stdfname" name="stdfname" placeholder="Father's Name" required>
+
+              </div>
+
+              <div class="form-group last mb-4">
+                <input type="text" onfocus="(this.type='date')"  class="form-control" id="stddob" name="stddob" placeholder="DOB" required>
+              </div>
+              <div class="form-group last mb-4">
+                <input type="text" class="form-control" id="stdphone" name="stdphone" placeholder="Student's Phone" required>
+              </div>
+              <div class="form-group last mb-4">
+                <input type="text" class="form-control" id="stdfatherphone" name="stdfatherphone" placeholder="Father's Phone" required>
+              </div>
+
+                <div class="form-group last mb-4">
+                <textarea id="stdaddress" name="stdaddress" placeholder="Address" required></textarea>
+              </div>
+
+                <div class="form-group last mb-4">
+                <input type="email" class="form-control" id="stdemail" name="stdemail" placeholder="Email" required>
+              </div>
+
+
+
+
+
+              <input type="submit" value="Sing Up" class="btn btn-block btn-primary">
+
+
+            </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+    <script>
+      function validateForm() {
+
+          var stdfirstname=document.forms["myForm"]["stdfirstname"].value;
+          var stdlastname=document.forms["myForm"]["stdlastname"].value;
+          var stdsurname=document.forms["myForm"]["stdsurname"].value;
+          var stdfather=document.forms["myForm"]["stdfname"].value;
+          var stdphone=document.forms["myForm"]["stdphone"].value;
+
+          if (!isNaN(stdfirstname) || !isNaN(stdlastname) || !isNaN(stdsurname)){
+            alert("Enter a Valid Name");
+            return false;
+          }
+          if (!isNaN(stdfather)){
+            alert("Enter a Valid Father Name");
+            return false;
+          }
+          var phoneno = /^\d{10}$/;
+          var txtPhone = document.getElementById("stdphone").value;
+          var txtfPhone = document.getElementById("stdfatherphone").value;
+          var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+          var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+
+          if (((txtPhone.match(phoneno)) || (txtPhone.match(mobileno))) && ((txtfPhone.match(phoneno)) || (txtfPhone.match(mobileno)))) {
+              return true;
+          }
+          else {
+              alert("Invalid Phone Number");
+              return false;
+          }
+
+
+      }
+    </script>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% if data %}
+      <script>
+        alert("Registration Successful");
+      </script>
+    {% endif %}
+  </body>
+
+</html>

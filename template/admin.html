@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+<head>
+    <title>Face Based Attendance System</title>
+    <style>
+        body{
+            margin:0px;
+            overflow:hidden;
+        }
+        #main{
+            width:100%;
+            height:auto;
+            position:absolute;
+            left:10px;
+            top:30px;
+        }
+        .box{
+            width:30%;
+            height:220px;
+            display:inline-block;
+            font-family:arial;
+            font-size:20px;
+            text-align:center;
+            border:1px solid rgba(0,0,0,.13);
+            padding-bottom:50px;
+            margin-top:50px;
+            margin-left:30px;
+            cursor:pointer;
+         }
+         .box:hover{
+            box-shadow:0px 0px 20px rgba(0,0,0,0.09);
+         }
+         .box img
+         {
+            width:50%;
+            height:100%;
+         }
+         a{
+            color:black;
+            text-decoration:none;
+           }
+           #logoutbtn{
+
+            position:absolute;
+            right:50px;
+            top:0px;
+            z-index:9999;
+
+    width:150px;
+    background:#1455ed;
+    font-family:arial;
+    font-size:1.5vh;
+    color:white;
+    font-weight:bold;
+    text-align:center;
+    line-height:50px;
+    border-radius:50px;
+    margin-left:130px;
+    margin-top:20px;
+    box-shadow:0px 10px 10px rgba(20,85,237,0.1),0px -10px 10px rgba(20,85,237,0.1);
+    cursor:pointer;
+            }
+    </style>
+</head>
+<body>
+    <a href="logout" id="logoutbtn">LOGOUT</a>
+    <div id="main">
+        <a href="std_registration">
+            <div class="box b2">
+                <img src="{% static 'img/registration.png' %}"/>
+                <br>Student Registration
+            </div>
+        </a>
+        <a href="std_detail">
+            <div class="box b3">
+                <img src="{% static 'img/user_details.png' %}"/>
+                <br>Student Detail
+            </div>
+        </a>
+        <a href="std_attendance_detail">
+            <div class="box b4">
+                <img src="{% static 'img/attendance_details.png' %}"/>
+                <br>Student Attendance Detail
+            </div>
+        </a>
+        <a href="admin_registration">
+            <div class="box b1">
+                <img src="{% static 'img/registration.png' %}"/>
+                <br>Teacher Registration
+            </div>
+        </a>
+        <a href="teacher_detail">
+            <div class="box b2">
+                <img src="{% static 'img/user_details.png' %}"/>
+                <br>Teacher Detail
+            </div>
+        </a>
+        <a href="teacher_attendance_detail">
+            <div class="box b2">
+                <img src="{% static 'img/attendance_details.png' %}"/>
+                <br>Teacher Attendance Detail
+            </div>
+        </a>
+    </div>
+</body>
+</html>

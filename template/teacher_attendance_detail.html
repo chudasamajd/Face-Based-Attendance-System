@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Based Attendance System</title>
+    <style type = "text/css" >
+    @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,200&display=swap");
+
+table {
+  font-family: "Fraunces", serif;
+  font-size: 125%;
+  white-space: nowrap;
+  margin: 0;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  border: 1px solid black;
+}
+table td,
+table th {
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+table thead th {
+  padding: 3px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 25vw;
+  background: white;
+}
+table td {
+  background: #fff;
+  padding: 4px 5px;
+  text-align: center;
+}
+
+table tbody th {
+  font-weight: 100;
+  font-style: italic;
+  text-align: left;
+  position: relative;
+}
+table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+table tbody th {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+caption {
+  text-align: left;
+  padding: 0.25rem;
+  position: sticky;
+  left: 0;
+}
+
+[role="region"][aria-labelledby][tabindex] {
+  width: 100%;
+  max-height: 98vh;
+  overflow: auto;
+}
+h1{
+  font-family:arial;
+  text-transform:uppercase;
+}
+
+</style>
+</head>
+<body>
+ <h1>Teacher Attendance Detail</h1>
+<div role="region" aria-labelledby="caption" tabindex="0">
+
+
+
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        {% for a in days %}
+          <th>{{a}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th>{{i.0}}</th>
+            {% for x in days %}
+
+            {% if x in i.1 %}
+              <td style="background-color:#00cc99;">{{x}}</td>
+            {% else %}
+              <td style="background-color:#ff6666;">{{x}}</td>
+            {% endif %}
+
+          {% endfor %}
+        </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+</div>
+</body>
+</html>
+<script>
+  GFG_Fun();
+
+
+            function daysInMonth (month, year) {
+                return new Date(year, month, 0).getDate();
+            }
+
+            function GFG_Fun() {
+                var date = new Date();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                console.log("Number of days in " + month
+                            + "th month of the year " + year
+                            +" is "+ daysInMonth(month, year));
+            }
+</script>

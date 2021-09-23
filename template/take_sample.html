@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Based Attendance System</title>
+    <style>
+        #window{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            box-shadow:0px 0px 1px 5px rgba(255,255,255,1),0px 0px 1px 7px rgba(20,85,237,1);
+        }
+        button{
+            height:50px;
+            width:180px;
+            background:#1455ed;
+            font-family:arial;
+            font-size:1.5vh;
+            color:white;
+            font-weight:bold;
+            text-align:center;
+            line-height:50px;
+            border-radius:50px;
+            position:absolute;
+            bottom:7%;
+            left:50%;
+            transform:translatex(-50%);
+            box-shadow:0px 10px 10px rgba(20,85,237,0.1),0px -10px 10px rgba(20,85,237,0.1);
+            cursor:pointer;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <img src="{% url 'video_feed2' %}" id="window">
+    <button id="btn">TAKE PICTURE</button>
+</body>
+</html>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function(event)
+    {
+        event.preventDefault();
+        alert('Registration Done');
+        location.href="trainModel";
+    }
+
+</script>

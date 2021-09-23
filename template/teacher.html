@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Based Attendance System</title>
+    <style>
+        body{
+            margin:0px;
+            overflow:hidden;
+        }
+        #main{
+            width:100%;
+            height:auto;
+            position:absolute;
+            left:100px;
+            top:30px;
+        }
+        .box{
+            width:40%;
+            height:220px;
+            display:inline-block;
+            font-family:arial;
+            font-size:20px;
+            text-align:center;
+            border:1px solid rgba(0,0,0,.13);
+            padding-bottom:50px;
+            margin-top:50px;
+            margin-left:50px;
+            cursor:pointer;
+         }
+         .box:hover{
+            box-shadow:0px 0px 20px rgba(0,0,0,0.09);
+         }
+         .box img
+         {
+            width:50%;
+            height:100%;
+         }
+         a{
+            color:black;
+           }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <a href="std_registration">
+            <div class="box b2">
+                <img src="{% static 'img/registration.png' %}"/>
+                <br>Student Registration
+            </div>
+        </a>
+        <div class="box b3">
+            <img src="{% static 'img/user_details.png' %}"/>
+            <br>User Detail
+        </div>
+        <div class="box b4">
+            <img src="{% static 'img/attendance_details.png' %}"/>
+            <br>Attendance Detail
+        </div>
+    </div>
+</body>
+</html>

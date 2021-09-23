@@ -9,20 +9,20 @@
 - pandas : for data processing
 <br>
 <b>Home Screen:</b><br>
-<img src="Output1.JPG"/>
+<img src="Home.JPG"/>
 <br>
 <b>Admin Login:</b><br>
-<img src="Output1.JPG"/>
+<img src="Output4.JPG"/>
 <br>
 <b>Admin Dashboard:</b><br>
 <img src="Output1.JPG"/>
 <br>
 <b>Student Registration:</b><br>
-<img src="Output1.JPG"/>
+<img src="Output2.JPG"/>
 <br>
 <b>Student Details:</b><br>
-<img src="Output1.JPG"/>
+<img src="Output3.JPG"/>
 <br>
 <b>Student Attendance Details:</b><br>
-<img src="Output1.JPG"/>
+<img src="Attendance.JPG"/>
 
